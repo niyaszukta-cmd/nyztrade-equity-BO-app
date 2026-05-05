@@ -1,0 +1,25 @@
+# NYZTrade Equity Screener — Requirements
+# Python 3.10+ recommended
+
+# Core
+streamlit>=1.35.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Market Data
+yfinance>=0.2.40
+
+# AI Ratings
+groq>=0.9.0
+
+# HTTP / Scraping (FII/DII fallback)
+requests>=2.31.0
+lxml>=5.0.0
+html5lib>=1.1
+
+# Charting (optional — for future Plotly upgrade)
+plotly>=5.18.0
+
+# Utilities
+python-dateutil>=2.8.2
+pytz>=2024.1
