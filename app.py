@@ -766,8 +766,8 @@ with tab1:
                 return ""
 
             styled = df_results.style\
-                .applymap(color_signal, subset=["Signal"])\
-                .applymap(color_score, subset=["Score"])\
+                .map(color_signal, subset=["Signal"])\
+                .map(color_score, subset=["Score"])\
                 .format({"Price": "₹{:.2f}", "Score": "{:.1f}", "RSI": "{:.1f}",
                          "Vol Ratio": "{:.2f}x", "ADX": "{:.1f}",
                          "Body Ratio": "{:.2f}", "52W High": "₹{:.2f}"})\
@@ -790,7 +790,7 @@ with tab1:
                                 "Price BRK", "ATR Expand", "ADX Trend", "Candle"]
             df_cond_display = df_cond.set_index("Ticker")
             st.dataframe(
-                df_cond_display.style.applymap(
+                df_cond_display.style.map(
                     lambda v: "background-color:#064e3b;color:#34d399" if v else "background-color:#450a0a;color:#f87171"
                 ).set_properties(**{"background-color": "#111827", "color": "#e2e8f0", "font-family": "Space Mono"}),
                 use_container_width=True
@@ -850,7 +850,7 @@ with tab2:
 
             st.markdown("")
             styled_sw = df_sw.style\
-                .applymap(bias_badge, subset=["Bias"])\
+                .map(bias_badge, subset=["Bias"])\
                 .format({"Price": "₹{:.2f}", "Chg%": "{:.2f}%", "RSI": "{:.1f}",
                          "Vol_Ratio": "{:.2f}x", "BB_Pos%": "{:.1f}%",
                          "MACD_Hist": "{:.4f}", "Stoch_K": "{:.1f}"})\
@@ -995,8 +995,8 @@ with tab4:
                 return "color:#fbbf24"
 
             styled_ai = df_ai_res.style\
-                .applymap(rating_color, subset=["rating"])\
-                .applymap(risk_color, subset=["risk"])\
+                .map(rating_color, subset=["rating"])\
+                .map(risk_color, subset=["risk"])\
                 .format({"target_1m": lambda x: f"₹{x:.2f}" if x else "N/A",
                          "stop_loss": lambda x: f"₹{x:.2f}" if x else "N/A"})\
                 .set_properties(**{"background-color": "#111827", "color": "#e2e8f0"})
